@@ -2,12 +2,12 @@ const { app, BrowserWindow } = require("electron");
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 720,
     resizable: false
   });
 
-  win.loadFile("src/views/connection.html");
+  win.loadFile("src/views/mangaList.html");
 }
 
 app.whenReady().then(() => {

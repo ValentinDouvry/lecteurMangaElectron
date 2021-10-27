@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <link rel="stylesheet" href="../contents/bootstrap/bootstrap-css.css" />
+  <title>Lecteur Manga</title>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <div class="text-end mb-5"><a href="connection.html">Already registered ?</a></div>
+    <div class="container-fluid">
+      <form class="text-end">
+        <div class="mb-3 row">
+          <label for="inputUsername" class="col-sm-4 col-form-label">Choose a username:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputEmail" class="col-sm-4 col-form-label">Enter your email:</label>
+          <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputEmail" placeholder="email@gmail.com">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-4 col-form-label">Choose a password:</label>
+          <div class="col-sm-5">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-4 col-form-label">Confirm your password:</label>
+          <div class="col-sm-5">
+            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Password">
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" id="buttonRegister">Register</button>
+        </div>
+      </form>
+    </div>
+
+  <script src="../contents/lodash.js"></script>
+  <script src="../actions/register.js"></script>
+  <script src="../contents/bootstrap/bootstrap-bundle.js"></script>
+</body>
+
+</html>
