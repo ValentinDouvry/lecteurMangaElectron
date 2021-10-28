@@ -12,16 +12,17 @@ main();
 async function main() {
     const manga = await getManga(mangaId);
     addMangaInfo(manga);
-    addChapter(manga.chapters)
+    manga.chapters = _.orderBy(manga.chapters, ['chapter_number'], ['desc']);
+    addChapter(manga.chapters, manga)
 }
 
 // TODO fonction pour la date relative des chapitres
-function addChapter(chapters) {
+function addChapter(chapters, manga) {
     _.forEach(chapters, (chapter)=> {
         chapterList.innerHTML += `
         <div class="row justify-content-between">
             <div class="col-10">
-                <a href="reader.html?id=${chapter.id}">${chapter.chapter_number}. ${chapter.title}</a>
+                <a href="reader.html?mangaId=${manga.id}&chapterId=${chapter.id}">${chapter.chapter_number}. ${chapter.title}</a>
             </div>
             <div class="col-2">${chapter.updated_date}</div>
         </div>
