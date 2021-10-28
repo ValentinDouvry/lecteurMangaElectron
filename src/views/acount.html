@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+				  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+		<link rel="stylesheet" href="../css/styles.css"/> <link rel="stylesheet" href="../contents/bootstrap/bootstrap-css.css"/>
+		<title>Lecteur Manga</title>
+	</head>
+
+	<body>
+		<div class="container mt-4">
+			<div class="mb-5 row">
+				<div class="col-auto">
+					<a class="btn btn-primary" href="mangaList.html">Home</a>
+				</div>
+				<div class="col-auto me-auto">
+					<a class="btn btn-primary" href="favorites.html" id="favorisMenu">My favorites</a>
+				</div>
+				<div class="col-auto">
+					<a class="btn btn-primary" href="#">Logout</a>
+				</div>
+			</div>
+
+			<div class="container mt-5">
+				<div class="col-8 offset-2">
+			
+				<form>
+					<div class="mb-3">
+						<img id="profileImage" src="https://rotek.fr/wp-content/uploads/risitas2.jpeg" class="rounded-circle">
+						<input type="file" accept="image/*" class="form-control" id="file" name="file">
+					</div>
+					<div class="mb-3">
+						<input type="text" class="form-control" id="username" name="username" placeholder="Username">
+					</div>
+					<div class="mb-3">
+						<input type="email" class="form-control" id="email" name="email" placeholder="Email">
+					</div>
+					<div class="mb-3">
+						<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+					</div>
+					<div class="mb-3">
+						<input type="password" class="form-control" id="corfirm-password" name="corfirm-password" placeholder="Corfirm password">
+					</div>
+					<div class="text-center mb-3">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+
+		<script src="../contents/lodash.js"></script>
+		<script src="../contents/axios.js"></script>
+		<script src="../actions/manga.js"></script>
+		<script src="../contents/bootstrap/bootstrap-bundle.js"></script>
+	</body>
+</html>
