@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+		<!--<meta http-equiv="Content-Security-Policy" content="img-src * 'self' data:; default-src 'self'; script-src 'self'; connect-src 1227.0.0.1:8080/*">
+										  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
+		<link rel="stylesheet" href="../css/styles.css"/> <link rel="stylesheet" href="../contents/bootstrap/bootstrap-css.css"/>
+		<title>Lecteur Manga</title>
+	</head>
+
+	<body>
+		<div class="container mt-4">
+			<div class="mb-5 row">
+				<div class="col-auto">
+					<a class="btn btn-primary" href="mangaList.html">Home</a>
+				</div>
+				<div class="col-auto">
+					<a class="btn btn-primary" href="favorites.html" id="favorisMenu">My favorites</a>
+				</div>
+				<div class="col-auto me-auto">
+					<a class="btn btn-primary" href="administrationDashboad.html" id="administration">Administation</a>
+				</div>
+				<div class="col-auto">
+					<a class="text-decoration-none me-3" href="#" id="usernameMenu"></a><img id="profilImageMenu" src="" class="rounded-circle"></div>
+			</div>
+
+			<div class="container-fluid mt-5 mb-4">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#mangasList" type="button" role="tab">Mangas</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" data-bs-toggle="tab" data-bs-target="#usersList" type="button" role="tab">Users</button>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="mangasList" role="tabpanel">
+						<table id="mangasTable" class="table table-striped table-hover">
+							<thead>
+								<tr>
+									<th>Title Manga</th>
+									<th>Author</th>
+									<th>Chapter number</th>
+									<th>Last modification</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					<div class="tab-pane fade" id="usersList" role="tabpanel">
+						<table id="usersTable" class="table table-striped table-hover">
+							<thead>
+								<tr>
+									<th>Username</th>
+									<th>Roe</th>
+									<th>Email</th>
+									<th>Last modification</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="../contents/lodash.js"></script>
+		<script src="../contents/axios.js"></script>
+		<script src="../actions/menu.js"></script>
+		<script src="../actions/administrationDashboard.js"></script>
+		<script src="../contents/bootstrap/bootstrap-bundle.js"></script>
+	</body>
+
+</html>

@@ -1,12 +1,16 @@
 const mangaContainer = document.getElementById('mangaContainer');
+const administration = document.getElementById('administration');
+
 main();
 
 async function main() {
   const mangas = await getMangas();
-   
-   if(!user) {
-    user = await getUser(2)
+  
+  if(!user) {
+    user = await getUser(2);
   }
+
+  administration.href = `administrationDashboad.html?id=${user.id}`;
   showMangas(mangas);
 }
 
