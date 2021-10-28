@@ -21,7 +21,7 @@ function addChapter(chapters) {
         chapterList.innerHTML += `
         <div class="row justify-content-between">
             <div class="col-10">
-                <a href="chapter.html?id=${chapter.id}">${chapter.chapter_number}. ${chapter.title}</a>
+                <a href="reader.html?id=${chapter.id}">${chapter.chapter_number}. ${chapter.title}</a>
             </div>
             <div class="col-2">${chapter.updated_date}</div>
         </div>
@@ -32,9 +32,7 @@ function addChapter(chapters) {
 
 async function getManga(id) {
     try {
-      const response = await axios.get(
-        `http://b811-193-253-116-198.ngrok.io/lecteurManga/rest/mangas/${id}`
-      );
+      const response = await axios.get(`http://localhost:8080/lecteurManga/rest/mangas/${id}`);
       return response.data;
     } catch (error) {
       console.error(error);

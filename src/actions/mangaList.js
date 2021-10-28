@@ -5,7 +5,7 @@ async function main() {
   const mangas = await getMangas();
    
    if(!user) {
-    user = await getUser(1)
+    user = await getUser(2)
   }
   showMangas(mangas);
 }
@@ -19,13 +19,13 @@ async function showMangas(mangas) {
     if(_.find(user.manga, ['id', manga.id])) fill = '-fill';
 
     mangaContainer.innerHTML += `<div class="col">
-    <div class="card"><a href="" class="text-decoration-none">
+    <div class="card h-100"><a href="" class="text-decoration-none">
       <svg class="iconFavorite mt-2 me-2" width="32" height="32" fill="red">
         <use xlink:href="../contents/bootstrap/icons/bootstrap-icons.svg#heart${fill}"/>
       </svg></a>
       <img src=${manga.cover_name} class="card-img-top mangaCardImage">
-      <div class="card-body">
-        <a href="manga.html?id=${manga.id}" class="text-decoration-none"><h5 class="card-title text-center">${manga.title}</h5></a>
+      <div class="card-body mangaTitleCard">
+        <a href="manga.html?id=${manga.id}" class="text-decoration-none"><h6 class="card-title text-center mangaTitleCard">${manga.title}</h6></a>
       </div>
     </div>
   </div>`;
@@ -35,7 +35,7 @@ async function showMangas(mangas) {
 
 async function getMangas() {
   try {
-    const response = await axios.get('http://b811-193-253-116-198.ngrok.io/lecteurManga/rest/mangas');
+    const response = await axios.get('http://localhost:8080/lecteurManga/rest/mangas');
     return response.data;
   } catch (error) {
     console.error(error);
