@@ -18,7 +18,7 @@ async function main() {
 async function getUser(id) {
   try {
     const response = await axios.get(
-      `http://133a-154-67-229-122.ngrok.io/lecteurManga/rest/accounts/${id}`
+      `http://localhost:8080/lecteurManga/rest/accounts/${id}`
     );
     return response.data;
   } catch (error) {
