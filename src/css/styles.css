@@ -35,3 +35,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.formImage {
+  height: 200px;
+}
+
+.formImage div {
+  height: 100%;
+}
+
+#profileImage {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  object-position: center center;
+}
