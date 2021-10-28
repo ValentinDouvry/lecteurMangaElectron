@@ -21,7 +21,7 @@ async function showFavorites(mangas) {
         <div class="card-body">
           <h5 class="card-title">${manga.title}</h5>
           <p class="card-text">${manga.summary}</p>
-          <p class="card-text"><small class="text-muted">Dernier chapitre: ${lastChapter ? `<a href='reader.html?id${lastChapter.id}'>${lastChapter.chapter_number}. ${lastChapter.title}</a>` : 'Aucun Chapitre'}</small></p>
+          <p class="card-text"><small class="text-muted">Dernier chapitre: ${lastChapter ? `<a href="reader.html?mangaId=${manga.id}&chapterId=${lastChapter.id}">${lastChapter.chapter_number}. ${lastChapter.title}</a>` : 'Aucun Chapitre'}</small></p>
         </div>
       </div>
     </div>
