@@ -18,6 +18,12 @@
   object-position: center center;
 }
 
+.favoriteCardImage {
+  height: 300px;
+  object-fit: cover;
+  object-position: center center;
+}
+
 #chapterList {
   max-height: 20px;
 }

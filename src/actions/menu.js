@@ -1,11 +1,12 @@
 const usernameMenu = document.getElementById("usernameMenu");
 const profilImageMenu = document.getElementById("profilImageMenu");
 const favorisMenu = document.getElementById("favorisMenu");
+let user;
 
 main();
 
 async function main() {
-  const user = await getUser(1);
+  user = await getUser(1);
 
   usernameMenu.innerText = user.username;
   usernameMenu.href = `acount.html?id=${user.id}`;
