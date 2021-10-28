@@ -5,7 +5,8 @@
 		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
 				  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
-		<link rel="stylesheet" href="../css/styles.css"/> <link rel="stylesheet" href="../contents/bootstrap/bootstrap-css.css"/>
+		<link rel="stylesheet" href="../css/styles.css"/> 
+		<link rel="stylesheet" href="../contents/bootstrap/bootstrap-css.css"/>
 		<title>Lecteur Manga</title>
 	</head>
 
@@ -27,9 +28,13 @@
 				<div class="col-8 offset-2">
 			
 				<form>
-					<div class="mb-3">
-						<img id="profileImage" src="https://rotek.fr/wp-content/uploads/risitas2.jpeg" class="rounded-circle">
-						<input type="file" accept="image/*" class="form-control" id="file" name="file">
+					<div class="mb-3 row formImage">
+						<div class="col-3 offset-1">
+							<img id="profileImage" src="https://rotek.fr/wp-content/uploads/risitas2.jpeg" class="rounded-circle">
+						</div>
+						<div class="col-6 offset-1 align-middle ">
+							<input type="file" accept="image/*" class="form-control" id="inputFile" name="file">
+						</div>
 					</div>
 					<div class="mb-3">
 						<input type="text" class="form-control" id="username" name="username" placeholder="Username">
@@ -53,7 +58,7 @@
 
 		<script src="../contents/lodash.js"></script>
 		<script src="../contents/axios.js"></script>
-		<script src="../actions/manga.js"></script>
+		<script src="../actions/account.js"></script>
 		<script src="../contents/bootstrap/bootstrap-bundle.js"></script>
 	</body>
 </html>
