@@ -6,3 +6,18 @@
   position: absolute;
   right: 0;
 }
+
+#coverManga {
+  width: 100%;
+  object-fit: contain;
+}
+
+.mangaCardImage {
+  height: 300px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+#chapterList {
+  max-height: 20px;
+}

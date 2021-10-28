@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <meta http-equiv="Content-Security-Policy" content="img-src * 'self' data:; default-src 'self'; script-src 'self'">
-  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <!--<meta http-equiv="Content-Security-Policy" content="img-src * 'self' data:; default-src 'self'; script-src 'self'; connect-src 1227.0.0.1:8080/*">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
   <link rel="stylesheet" href="../css/styles.css"/>
   <link rel="stylesheet" href="../contents/bootstrap/bootstrap-css.css"/>
   <title>Lecteur Manga</title>
@@ -15,19 +15,21 @@
   <div class="container mt-4">
     <div class="mb-5 row">
       <div class="col-auto"><a class="btn btn-primary" href="mangaList.html">Home</a></div>
-      <div class="col-auto me-auto"><a class="btn btn-primary" href="favorites.html">My favorites</a></div>
-      <div class="col-auto"><a class="text-decoration-none me-3" href="#">Xx-Issou-xX</a><img id="profilImageMenu" src="https://rotek.fr/wp-content/uploads/risitas2.jpeg" class="rounded-circle"></div>
+      <div class="col-auto me-auto"><a class="btn btn-primary" href="favorites.html" id="favorisMenu">My favorites</a></div>
+      <div class="col-auto"><a class="text-decoration-none me-3" href="#" id="usernameMenu"></a><img id="profilImageMenu" src="" class="rounded-circle"></div>
     </div>
 
     <div class="container-fluid mt-5">
       <h2 class="ms-4 mb-4">Manga list</h2>
-      <div class="container-fluid row row-cols-1 row-cols-md-3 g-4" id="mangaContainer">
+      <div class="container-fluid row row-cols-1 row-cols-md-4 g-4" id="mangaContainer">
       </div>
     </div>
 
   </div>
 
   <script src="../contents/lodash.js"></script>
+  <script src="../contents/axios.js"></script>
+  <script src="../actions/menu.js"></script>
   <script src="../actions/mangaList.js"></script>
   <script src="../contents/bootstrap/bootstrap-bundle.js"></script>
 </body>

@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../contents/bootstrap/bootstrap-css.css" />
+    <title>Lecteur Manga</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-  <link rel="stylesheet" href="../contents/bootstrap/bootstrap-css.css" />
-  <title>Lecteur Manga</title>
-</head>
+  <body>
+    <div class="container mt-4">
+      <div class="mb-5 row">
+        <div class="col-auto">
+          <a class="btn btn-primary" href="mangaList.html">Home</a>
+        </div>
+        <div class="col-auto me-auto">
+          <a class="btn btn-primary" href="favorites.html" id="favorisMenu"
+            >My favorites</a
+          >
+        </div>
+        <div class="col-auto">
+          <a class="text-decoration-none me-3" href="#" id="usernameMenu"></a>
+          <img id="profilImageMenu" src="" class="rounded-circle" />
+        </div>
+      </div>
 
-<body>
-  <div class="container mt-4">
-    <div class="mb-5 row">
-      <div class="col-1 me-2"><a class="btn btn-primary" href="mangaList.html">Home</a></div>
-      <div class="col"><a class="btn btn-primary" href="favorites.html">My favorites</a></div>
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-sm-3">
+            <img
+              id="coverManga"
+              src=""
+            />
+            <div class="rating"></div>
+            <p>Note: <span id="note">?</span>/5</p>
+          </div>
+          <div class="col-sm-8">
+            <h2 id="titleManga"></h2>
+            <p>Auteur: <span id="autorManga"></span></p>
+            <p id="descriptionManga"></p>
+          </div>
+        </div>
+
+        <div>
+          <h3>Chapitres</h3>
+          <div id="chapterList">
+          </div>
+        </div>
+      </div>
     </div>
-    <p id="test"></p>
-  </div>
 
-  <script src="../contents/lodash.js"></script>
-  <script src="../actions/test.js"></script>
-  <script src="../contents/bootstrap/bootstrap-bundle.js"></script>
-</body>
-
+    <script src="../contents/lodash.js"></script>
+    <script src="../contents/axios.js"></script>
+    <script src="../actions/menu.js"></script>
+    <script src="../actions/manga.js"></script>
+    <script src="../contents/bootstrap/bootstrap-bundle.js"></script>
+  </body>
 </html>
