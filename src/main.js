@@ -4,7 +4,8 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1280,
     height: 720,
-    resizable: false
+    resizable: false,
+    webPreferences: { preload:  '../preload.js' }
   });
 
   win.loadFile("src/views/mangaList.html");

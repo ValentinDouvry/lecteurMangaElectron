@@ -6,7 +6,7 @@ let user;
 main();
 
 async function main() {
-  user = await getUser(2);
+  user = await getUser(1);
 
   usernameMenu.innerText = user.username;
   usernameMenu.href = `account.html?id=${user.id}`;
@@ -18,7 +18,7 @@ async function main() {
 async function getUser(id) {
   try {
     const response = await axios.get(
-      `http://localhost:8080/lecteurManga/rest/accounts/${id}`
+      `http://a73e-193-253-116-198.ngrok.io/lecteurManga/rest/accounts/${id}`
     );
     return response.data;
   } catch (error) {

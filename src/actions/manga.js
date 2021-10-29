@@ -33,7 +33,7 @@ function addChapter(chapters, manga) {
 
 async function getManga(id) {
     try {
-      const response = await axios.get(`http://localhost:8080/lecteurManga/rest/mangas/${id}`);
+      const response = await axios.get(`http://a73e-193-253-116-198.ngrok.io/lecteurManga/rest/mangas/${id}`);
       return response.data;
     } catch (error) {
       console.error(error);
