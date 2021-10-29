@@ -12,10 +12,20 @@ async function main() {
 
   administration.href = `administrationDashboad.html?id=${user.id}`;
   showMangas(mangas);
+
+  const buttonsFavorites = document.getElementsByClassName('buttonFavorite');
+
+  _.forEach(buttonsFavorites, async (buttonFavorite) => {
+    buttonFavorite.addEventListener('click', async () => {
+      const mangaId = buttonFavorite.id.split('-')[1];
+      await updateFavorite(user.id, mangaId);
+    });
+  });
 }
 
 
 async function showMangas(mangas) {
+  mangas = _.orderBy(mangas, ['updated_date'], ['desc']);
   _.forEach(mangas, async (manga) => {
     let fill = '';
 
@@ -23,7 +33,7 @@ async function showMangas(mangas) {
     if(_.find(user.manga, ['id', manga.id])) fill = '-fill';
 
     mangaContainer.innerHTML += `<div class="col">
-    <div class="card h-100"><a href="" class="text-decoration-none">
+    <div class="card h-100"><a href="" class="text-decoration-none buttonFavorite" id="manga-${manga.id}">
       <svg class="iconFavorite mt-2 me-2" width="32" height="32" fill="red">
         <use xlink:href="../contents/bootstrap/icons/bootstrap-icons.svg#heart${fill}"/>
       </svg></a>
@@ -34,6 +44,14 @@ async function showMangas(mangas) {
     </div>
   </div>`;
   });
+}
+
+async function updateFavorite(userId, mangaId) {
+  try {
+    await axios.post(`http://localhost:8080/lecteurManga/rest/mangas/favoris/account/${userId}/manga/${mangaId}`);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 
