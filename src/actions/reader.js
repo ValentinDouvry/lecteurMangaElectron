@@ -12,6 +12,7 @@ const readerMangaTitle = document.getElementById("readerMangaTitle");
 const readerChapterTitle = document.getElementById("readerChapterTitle");
 const readerPage = document.getElementById("readerPage");
 const readerPreviousButton = document.getElementById("readerPreviousButton");
+
 readerPreviousButton.addEventListener('click', () => {
   pageIndex--;
   if (pageIndex < 0) {
@@ -26,6 +27,7 @@ readerPreviousButton.addEventListener('click', () => {
     readerPage.src = pages[pageIndex].image_path;
   }
 });
+
 const readerNextButton = document.getElementById("readerNextButton");
 readerNextButton.addEventListener('click', () => {
   pageIndex++;
@@ -51,7 +53,6 @@ async function main() {
   const chapter = _.find(manga.chapters, ['id', _.toNumber(chapterId)]);
   pages = _.orderBy(chapter.pages, ['page_number'], ['asc']);
   
-
   chapterIndex = _.findIndex(manga.chapters, ['id', _.toNumber(chapterId)]);
   
   readerMangaTitle.innerText = manga.title;

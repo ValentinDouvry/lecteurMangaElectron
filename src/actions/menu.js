@@ -6,7 +6,7 @@ let user;
 main();
 
 async function main() {
-  user = await getUser(2);
+  user = await getUser(1);
 
   usernameMenu.innerText = user.username;
   usernameMenu.href = `account.html?id=${user.id}`;

@@ -8,9 +8,7 @@ const inputFile = document.getElementById("inputFile");
 main();
 
 async function main() {
-  const user = await getUser(2);
-
-  console.log(user);
+  const user = await getUser(1);
 
   favorisMenu.href = `favorites.html?id=${user.id}`;
   profileImage.src = user.image_path;
